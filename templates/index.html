@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Human Health Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+</head>
+
+<body>
+    <h1 class="text-center">Welcome to Human Health Calulator!</h1>
+    <h1 class="text-center">Enter required inputs as necessary</h1>
+    <br />
+    <div>
+        <div class="content-section">
+            <form action="" method="post" class="m-sm-5 p-sm-5 border border-opacity-25 rounded-4 p-2 mt-3">
+                {{ form.hidden_tag() }}
+                <fieldset>
+                    <div class="form mb-3">
+                        {{ form.oxygen.label(class="form-label") }}
+                        {% if form.oxygen.errors %}
+                        {{ form.oxygen(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.oxygen.errors %}
+                            <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        {{ form.oxygen(class="form-control form-control-lg") }}
+                        {% endif %}
+                        {% if olr %}
+                            <p>{{ olr }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="form mb-3">
+                        {{ form.temprature.label(class="form-label") }}
+                        {% if form.temprature.errors %}
+                        {{ form.temprature(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.temprature.errors %}
+                            <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        {{ form.temprature(class="form-control form-control-lg") }}
+                        {% endif %}
+                        {% if tlr %}
+                            <p>{{ tlr }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="form mb-3">
+                        {{ form.hbpm.label(class="form-label") }}
+                        {% if form.hbpm.errors %}
+                        {{ form.hbpm(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.hbpm.errors %}
+                            <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        {{ form.hbpm(class="form-control form-control-lg") }}
+                        {% endif %}
+                        {% if hlr %}
+                            <p>{{ hlr }}</p>
+                        {% endif %}
+                    </div>
+                </fieldset>
+                <div class="form mb-3 mt-3">
+                    {{ form.submit(class="btn btn-outline-info") }}
+                </div>
+                {% if final %}
+                <h1 class="text-center">{{ final }}</h1>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
