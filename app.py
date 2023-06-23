@@ -55,6 +55,8 @@ def hello_world():
             final = "Your health is average!"
         else:
             final = "Make funeral arrangements ASAP! (and don't forget to call your relatives 😐 )"
+        
+        print(oxygen_level, temprature_level, hbpm_level, sum)
 
         return render_template("index.html", form=form, olr = oxygen_level_response or None, tlr = temprature_level_response, hlr= hbpm_level_response, final = final)
 
